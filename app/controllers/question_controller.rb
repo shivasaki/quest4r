@@ -4,7 +4,13 @@ class QuestionController < ApplicationController
   end
 
   def index_col
-    @questions = Question.where(user.type == 1-5)
+    #@questions = Question.where(user.type == 1-5)
+  end
+
+  def index_hs
+    #@questions = Question.where(user.type == 0)
+  end
+
   def show
   end
 
