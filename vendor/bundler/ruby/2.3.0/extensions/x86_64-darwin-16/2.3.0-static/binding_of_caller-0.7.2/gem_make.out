@@ -1,0 +1,16 @@
+current directory: /Users/shivasaki/folder/app/ruq/vendor/bundler/ruby/2.3.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+/Users/shivasaki/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20170803-34575-1c0puou.rb extconf.rb
+
+current directory: /Users/shivasaki/folder/app/ruq/vendor/bundler/ruby/2.3.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** No rule to make target `clean'.  Stop.
+
+current directory: /Users/shivasaki/folder/app/ruq/vendor/bundler/ruby/2.3.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /Users/shivasaki/folder/app/ruq/vendor/bundler/ruby/2.3.0/gems/binding_of_caller-0.7.2/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

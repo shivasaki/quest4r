@@ -3,23 +3,25 @@ class QuestionController < ApplicationController
     #@questions = Question.all
   end
 
+  def index_col
+    @questions = Question.where(user.type == 1-5)
   def show
   end
 
   def new
-    #@text = Text.new
+    #question = Question.new
   end
 
   def create
-    @text = Question.new(text_params)
+    @question = Question.new(question_params)
 
     respond_to do |format|
-      if @text.save
-        format.html { redirect_to @text, notice: 'Text was successfully created.' }
-        format.json { render :show, status: :created, location: @text }
+      if @question.save
+        format.html { redirect_to @question, notice: '質問を作成しました' }
+        format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
-        format.json { render json: @text.errors, status: :unprocessable_entity }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
   end
