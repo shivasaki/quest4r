@@ -1,0 +1,39 @@
+<div class="sidebar">
+    <ul class="menu" style="text-align:center;">
+            <li class="left" id="mypage">
+                <%= link_to 'ログイン', user_edit_path, :style=>"color:white;" %>
+            </li>
+            <li class="left">
+                <%= link_to '質問する', question_new_path, :style=>"color:white;" %>
+            </li>
+            <li class="left">
+                <%= link_to '在学生の質問', questions_index_col_path, :style=>"color:white;" %>
+            </li>
+            <li class="left">
+                <%= link_to '外部からの質問', questions_index_hs_path, :style=>"color:white;" %>
+            </li>
+    </ul>
+</div>
+
+<div class="main" style="">
+    <div style="" class="content">
+        <p class="page" style="color:#b23232; margin-left:50px;">新規登録</p>
+        <div class="login" style="margin-left: auto; margin-right: auto;display:block;">
+<%= form_for @user, :url => {:action => 'create'} do |f| %>
+    <p>ユーザーネーム<%= f.text_field :name %></p>
+    <p>メールアドレス<%= f.text_field :email %></p>
+    <p>パスワード<%= f.text_field :password %></p>
+    <label><%= f.radio_button :type, "0" %>外部の方</label>
+    <label><%= f.radio_button :type, "1" %>一回生</label>
+    <label><%= f.radio_button :type, "2" %>二回生</label>
+    <label><%= f.radio_button :type, "3" %>三回生</label>
+    <label><%= f.radio_button :type, "4" %>四回生</label>
+    <label><%= f.radio_button :type, "5" %>その他</label>
+    <p><%= f.submit %></p>
+<% end %>
+        </div>
+        <div class="come">
+            <p>sign up</p>
+        </div>
+    </div>
+</div>

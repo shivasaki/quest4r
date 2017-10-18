@@ -4,11 +4,11 @@ class QuestionController < ApplicationController
   end
 
   def index_col
-    #@questions = Question.where(user.type == 1-5)
+    @questions = Question.all #where(user.type == 1-5)に書き換える
   end
 
   def index_hs
-    #@questions = Question.where(user.type == 0)
+    @questions = Question.all #where(user.type == 0)に書き換える
   end
 
   def show
