@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+    <%  questions.each do |question| %>
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.text %></td>
+        <td><%= link_to '詳細', question %></td>
+      </tr>
+    <% end %>
