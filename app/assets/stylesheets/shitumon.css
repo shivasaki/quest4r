@@ -113,6 +113,17 @@ margin-left: auto;
   -moz-box-shadow: 0 15px 10px #777;
   box-shadow: 0 15px 10px #777;
 }
+.posting{
+	width:65%;
+	height:300px;
+	max-width:65%;
+	max-height:300px;
+	background:white;
+	margin-top:10px;
+	  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+}
 .content{
 	margin-top:100px
 }
@@ -213,6 +224,18 @@ width:50%;
   -moz-box-shadow: 0 15px 10px #777;
   box-shadow: 0 15px 10px #777;
 }
+.posting{
+	width:80%;
+	max-width: 80%;
+	height:300px;
+	max-height: 300px;
+	background:white;
+	margin-top: 10px;
+	 -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+}
+
 .content{
 	margin-top:150px
 }
@@ -295,6 +318,18 @@ width:80%;
 	background:#efefef;
 }
 .tweet{
+	width:80%;
+	max-width: 80%;
+	height:300px;
+	max-height:300px;
+	background:white;
+	margin-top: 10px;
+	 -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+}
+
+.posting{
 	width:80%;
 	max-width: 80%;
 	height:300px;
