@@ -1,5 +1,6 @@
 class UserController < ApplicationController
-    before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
+  layout "user_new", :only=>"new"
   
     def new
       @user = User.new
@@ -7,18 +8,39 @@ class UserController < ApplicationController
 
     def edit
     end
-  
+
+    def login
+    end
+
     def create
       @user = User.new(user_params)
-  
-      respond_to do |format|
-        if @user.save
-          format.html { redirect_to @user, notice: 'user was successfully created.' }
-          format.json { render :show, status: :created, location: @user }
-        else
-          format.html { render :new }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
+      binding.pry
+      case @user.grade
+      when 1, 2, 3, 4, 5
+      if @user.email.include?(ed.ritsumei.ac.jp)
+        respond_to do |format|
+          if @user.save
+            format.html { redirect_to qustions_index_col_path, notice: 'user was successfully created.' }
+            format.json { render :show, status: :created, location: @user }
+          else
+            format.html { render :new }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          end
         end
+      else
+        format.html { render :new }
+      end
+      when 0
+        respond_to do |format|
+          if @user.save
+            format.html { redirect_to questions_index_hs_path, notice: 'user was successfully created.' }
+            format.json { render :show, status: :created, location: @user }
+          else
+            format.html { render :new }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          end
+        end
+      else
       end
     end
 
@@ -45,11 +67,16 @@ class UserController < ApplicationController
       private
         # Use callbacks to share common setup or constraints between actions.
         def set_user
-          @user = User.find(params[:id])
+          if logged_in?
+            log_in
+            current_user
+          else
+            redirect_to user_new_path
+          end
         end
     
         # Never trust parameters from the scary internet, only allow the white list through.
         def user_params
-          params.require(:name, :email, :password, :type).permit(:name, :email, :password, :type)
+          params.require(:user).permit(:name, :email, :password, :grade)
         end
 end

@@ -23,28 +23,21 @@
 <body style="background:#efefef;">
   <div class="row">
     <div class="header" id="header" style="">
-        <a href="shitumon-top.html" style="color:white; margin-left:30px; font-family:fantasy;">Quest
-          <span style="font-size:16px; font-family:arial;">for 立命館</span>
-        </a>
+        <%= link_to 'Quest.', top_path, :style=>"color:white; margin-left:30px; font-family:fantasy;" %>
+          <span style="font-size:16px; font-family:arial; color:white;">for 立命館</span>
     </div>
 
     <!--サイドバー-->
     <div class="sidebar">
         <ul class="menu" style="text-align:center;">
-            <li class="left" id="mypage">
-                <%= link_to 'マイページ', user_edit_path, :style=>"color:white;" %>
-            </li>
             <li class="left">
-                <%= link_to '質問する', question_new_path, :style=>"color:white;" %>
+                <%= link_to 'ログアウト', login_path, :style=>"color:white;" %>
             </li>
             <li class="left">
                 <%= link_to '在学生の質問', questions_index_col_path, :style=>"color:white;" %>
             </li>
             <li class="left">
                 <%= link_to '外部からの質問', questions_index_hs_path, :style=>"color:white;" %>
-            </li>
-            <li class="left">
-                <a style="color:white;">ログアウト</a>
             </li>
         </ul>
     </div>

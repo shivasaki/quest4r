@@ -1,4 +1,6 @@
 class QuestionController < ApplicationController
+  before_action :log_check
+
   def index
     #@questions = Question.all
   end
@@ -29,6 +31,13 @@ class QuestionController < ApplicationController
         format.html { render :new }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
+    end
+  end
+private
+  def log_check
+    if logged_in?
+    else
+      redirect_to login_path
     end
   end
 

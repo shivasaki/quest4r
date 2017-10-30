@@ -1,0 +1,29 @@
+    <!--サイドバー-->
+    <div class="sidebar">
+        <ul class="menu" style="text-align:center;">
+            <li class="left">
+                <%= link_to '新規登録', user_new_path, :style=>"color:white;" %>
+            </li>
+            <li class="left">
+                <%= link_to '在学生の質問', questions_index_col_path, :style=>"color:white;" %>
+            </li>
+            <li class="left">
+                <%= link_to '外部からの質問', questions_index_hs_path, :style=>"color:white;" %>
+            </li>
+        </ul>
+    </div>
+
+<div class="main" style="">
+    <div style="" class="content">
+        <p class="page" style="color:#b23232; margin-left:50px;">ログイン</p>
+        <div class="login" style="margin-left: auto; margin-right: auto;display:block;">
+          <%= form_for(:session, url: login_path) do |f| %>
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+          <br><%= f.submit "Log in" %>
+        </div>
+        <% end %>
+    </div>
+</div>
