@@ -18,15 +18,15 @@
         <p class="page" style="color:#b23232; margin-left:50px;">新規登録</p>
         <div class="login" style="margin-left: auto; margin-right: auto;display:block;">
           <%= form_for @user, :url => {:action => 'create'} do |f| %>
-            <p>ユーザーネーム<%= f.text_field :name %></p>
-            <p>メールアドレス<%= f.email_field :email %></p>
-            <p>パスワード<%= f.text_field :password %></p>
-            <label><%= f.radio_button :grade, "0" %>外部の方</label>
-            <label><%= f.radio_button :grade, "1" %>一回生</label>
-            <label><%= f.radio_button :grade, "2" %>二回生</label>
-            <label><%= f.radio_button :grade, "3" %>三回生</label>
-            <label><%= f.radio_button :grade, "4" %>四回生</label>
-            <label><%= f.radio_button :grade, "5" %>その他</label></p>
+            <p>ユーザーネーム</p><%= f.text_field :name %>
+            <p>メールアドレス</p><%= f.email_field :email %>
+            <p>パスワード</p><%= f.text_field :password %>
+            <p><label><%= f.radio_button :grade, "0" %>外部の方</label></p>
+            <p><label><%= f.radio_button :grade, "1" %>一回生</label></p>
+            <p><label><%= f.radio_button :grade, "2" %>二回生</label></p>
+            <p><label><%= f.radio_button :grade, "3" %>三回生</label></p>
+            <p><label><%= f.radio_button :grade, "4" %>四回生</label></p>
+            <p><label><%= f.radio_button :grade, "5" %>その他</label></p>
             <p><%= f.submit %></p>
            <% end %>
         </div>
