@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
+  root 'site#home'
 
-  get 'about', to: 'pages#about'
-
-  resources :articles
+  get 'about', to: 'site#about'
 
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
@@ -13,6 +11,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :questions
-  resources :answers
+  resources :questions, :answers
+
+  get 'questions_col' => 'questions#index_col'
+  get 'questions_hs' => 'questions#index_hs'
 end

@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
   layout "user_new", :only=>"new"
   
@@ -33,7 +33,7 @@ class UserController < ApplicationController
       when 0
         respond_to do |format|
           if @user.save
-            format.html { redirect_to questions_index_hs_path, notice: 'user was successfully created.' }
+            format.html { redirect_to questions_hs_path, notice: 'user was successfully created.' }
             format.json { render :show, status: :created, location: @user }
           else
             format.html { render :new }
@@ -59,7 +59,7 @@ class UserController < ApplicationController
       def destroy
         @user.destroy
         respond_to do |format|
-          format.html { redirect_to site_top_path , notice: 'user was successfully destroyed.' }
+          format.html { redirect_to site_root_path , notice: 'user was successfully destroyed.' }
           format.json { head :no_content }
         end
       end

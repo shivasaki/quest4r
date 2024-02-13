@@ -1,4 +1,4 @@
 class SiteController < ApplicationController
-  def top
+  def home
   end
 end
